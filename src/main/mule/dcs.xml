@@ -1,0 +1,10 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.mulesoft.org/schema/mule/java" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd  http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+	http://www.mulesoft.org/schema/mule/java http://www.mulesoft.org/schema/mule/java/current/mule-java.xsd">
+    <http:listener-config name="Listener-config">
+        <http:listener-connection port="8081" host="localhost"></http:listener-connection>
+    </http:listener-config>
+    <flow name="Hello">
+        <http:listener doc:id="hznxnm" doc:name="Listener" path="dcs/5.0/hello" config-ref="Listener-config"></http:listener>
+        <java:invoke-static class="io.daikincloud.dcs.services.Hello" method="get()" doc:name="Invoke static" doc:id="raitrv" outputMimeType="application/json" />
+    </flow>
+</mule>

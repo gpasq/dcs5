@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Attach to Java",
+        "request": "attach",
+        "hostName": "localhost",
+        "port": 5005
+      },
+      {
+        "type": "mule-xml-debugger",
+        "request": "launch",
+        "name": "Debug Mule Application",
+        "mule.project": "${workspaceFolder}",
+        "mule.runtime.args": "${config:mule.runtime.defaultArguments}"
+      }
+    ]
+  }
